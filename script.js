@@ -15,7 +15,7 @@ $(document).ready(function() {
       });
     }
   }  document.getElementById('clicky').addEventListener('click', fetchGifs);
-  
+
 
   function displayGifs(gifs) {
     const gifContainer = document.getElementById('gif-container');
@@ -30,5 +30,5 @@ $(document).ready(function() {
     img.classList.add('gif-item');
     gifContainer.appendChild(img);
   }
-  
+
 })
