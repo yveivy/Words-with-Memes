@@ -1,19 +1,20 @@
 var query = localStorage.getItem('searchQuery');
+var filteredGifs;
 
 function fetchDefinition(query) {
   const DictionaryApiKey = '42f40c1e-656e-47a8-9597-6b3c3c5fdbe0';
 
   if (query) {
-  fetch(`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${query}?key=${DictionaryApiKey}`)
-    .then(response => response.json())
-    .then(data => {
-      console.log('Dictionary API data:', data); // Do something with the data
-    })
-    .catch(error => {
-      console.error(error);
-    });
-  
-}
+    fetch(`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${query}?key=${DictionaryApiKey}`)
+      .then(response => response.json())
+      .then(data => {
+        console.log('Dictionary API data:', data); // Do something with the data
+      })
+      .catch(error => {
+        console.error(error);
+      });
+
+  }
 }
 
 // This API call uses the variable 'query' defined from local storage
@@ -25,8 +26,13 @@ function fetchGifs(query) {
         return response.json();
       })
       .then(function (data) {
-        displayGifs(data.data);
+        const gifs = data.data;
+
+        filteredGifs = gifs.filter(function (gif) {
+          return gif.rating !== 'r';
+        });
         console.log(data);
+        displayGifs(filteredGifs);
       });
   }
 }
@@ -49,8 +55,32 @@ function displayGifs(gifs) {
   img.src = randomGif.images.fixed_width.url;
   img.classList.add('gif-item');
   gifContainer.appendChild(img);
+  document.getElementById('copyable-link').value = randomGif.images.fixed_width.url;
 }
 
 fetchGifs(query);
 fetchDefinition(query);
+
+const nextGifBtn = document.getElementById('next-gif-button');
+nextGifBtn.addEventListener('click', function (gifs) {
+  displayGifs(filteredGifs);
+
+  const copyLinkButton = document.getElementById('copy-link-button');
+  const copyStatus = document.getElementById('copy-status');
+
+  copyLinkButton.addEventListener('click', function () {
+    const copyableLink = document.getElementById('copyable-link');
+    navigator.clipboard.writeText(copyableLink.value)
+      .then(() => {
+        copyStatus.textContent = 'Link copied to clipboard!';
+        setTimeout(() => {
+          copyStatus.textContent = '';
+        }, 3000); // Remove the message after 3 seconds
+      })
+      .catch((err) => {
+        console.error('Failed to copy link: ', err);
+      });
+  });
+});
+
 
