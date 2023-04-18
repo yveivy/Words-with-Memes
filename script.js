@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 const form = document.querySelector('.pure-form');
 const input = document.querySelector('.pure-input-rounded');
 
@@ -23,7 +23,6 @@ form.addEventListener('submit', (event) => {
 
 });
 
-=======
 $(document).ready(function() {
 
   const giphyApiKey = 'DQQk3Czth43tzR6goSHYIQXrKreMrWf2';
@@ -55,12 +54,7 @@ $(document).ready(function() {
     img.src = randomGif.images.fixed_width.url;
     img.classList.add('gif-item');
     gifContainer.appendChild(img);
-  }
-<<<<<<< HEAD
-  
-})
->>>>>>> b27a129109ba4365ce6ecb382a25d17468c365e1
-=======
+  };
 
-})
->>>>>>> 60d41575b2c65399c167b5c4a49830a6c9e433ed
+  
+});
