@@ -6,21 +6,18 @@ body {
 .gif-item{
     width: 500px;
     height: 500px;
-    border: #2d3e50;
-    border-color: #2d3e50;
+/* display: flex;
+justify-content: center; */
 }
 
 
 .gif-container{
 
 
-    display: block;
-        width: 100%;
-            height: 60%;
-            top: 0;
-            left: 0;
+    display: flex;
+    justify-content: center;          
         border: #000000;
-        padding: 15px 25px;
+        padding: 25px 25px;
         font-weight: bolder;
         cursor: pointer;
         text-align: center;
@@ -42,8 +39,10 @@ content: "😂 ";
     color: #dfd7d7;
     background-color: #2d3e50;
     text-align: center;
-    padding: 2.5em 2em 0;
-    border-bottom: 1px solid #eee;
+    padding: 1.5em 0;
+    border-bottom: 30px solid #5e5959 ;
+    border-style:groove;
+    border-radius: 45% 4;
 }
 
 .header h1 {
@@ -52,11 +51,19 @@ content: "😂 ";
     font-weight: 300;
 }
 
+h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #sub-title{
     border: #2d3e50;
     border-width: 35px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     font-weight: 300;
     color: #1b1a1a;
     /* padding: 0;
@@ -71,7 +78,7 @@ content: "😂 ";
 
 footer{
     height: 50px;
-        position: relative;
+        /* position: relative; */
     
  }
 
@@ -80,17 +87,15 @@ footer{
   /* display: flex;
   justify-content: center;
   align-items: center; */
-  width: 40%;
+  /* width: 40%; */
   border: #000000;
   background-color: #534f4f;
   color: #dfd7d7;
   padding: 15px 25px;
-  font-size: small;
+  /* font-size: small; */
   font-weight: bolder;
   cursor:pointer;
-  text-align: center;
-margin: 0;
-position: absolute;
+
 
 }
 
