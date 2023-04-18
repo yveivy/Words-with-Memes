@@ -1,9 +1,37 @@
 var query = localStorage.getItem('searchQuery');
+<<<<<<< HEAD
+var word = localStorage.getItem('searchWord');
+=======
 var filteredGifs;
+>>>>>>> 0dca6bd0d379b883aa4076d09d1483ecb4428d75
 
-function fetchDefinition(query) {
+function fetchDefinition(word) {
   const DictionaryApiKey = '42f40c1e-656e-47a8-9597-6b3c3c5fdbe0';
+  const outputDiv = document.querySelector('.output');
 
+  if (word && outputDiv) {
+    fetch(`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=${DictionaryApiKey}`)
+      .then(response => response.json())
+      .then(data => {
+
+        const firstDefinition = data[0].shortdef[0];
+
+        const definitionNode = document.createTextNode(firstDefinition);
+
+        outputDiv.innerHTML = '';
+
+        outputDiv.appendChild(definitionNode);
+
+        console.log(firstDefinition);
+      })
+      .catch(error => {
+        console.error('Error fetching definition:', error);
+      });
+  }
+};
+
+<<<<<<< HEAD
+=======
   if (query) {
     fetch(`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${query}?key=${DictionaryApiKey}`)
       .then(response => response.json())
@@ -16,6 +44,7 @@ function fetchDefinition(query) {
 
   }
 }
+>>>>>>> 0dca6bd0d379b883aa4076d09d1483ecb4428d75
 
 // This API call uses the variable 'query' defined from local storage
 function fetchGifs(query) {
@@ -36,6 +65,7 @@ function fetchGifs(query) {
       });
   }
 }
+
 
 function displayGifs(gifs) {
   const gifContainer = document.querySelector('.gif-container');
@@ -59,7 +89,7 @@ function displayGifs(gifs) {
 }
 
 fetchGifs(query);
-fetchDefinition(query);
+fetchDefinition(word);
 
 const nextGifBtn = document.getElementById('next-gif-button');
 nextGifBtn.addEventListener('click', function (gifs) {
