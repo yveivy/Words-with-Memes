@@ -1,6 +1,5 @@
-
-const form = document.querySelector('.pure-form');
-const input = document.querySelector('.pure-input-rounded');
+document.addEventListener('DOMContentLoaded', function () {
+var searchQuery = localStorage.getItem('searchQuery');
 
 
 form.addEventListener('submit', (event) => {
@@ -24,10 +23,14 @@ form.addEventListener('submit', (event) => {
 });
 
 
-$(document).ready(function() {
 
-  const giphyApiKey = 'DQQk3Czth43tzR6goSHYIQXrKreMrWf2';
 
+
+
+
+const giphyApiKey = 'DQQk3Czth43tzR6goSHYIQXrKreMrWf2';
+
+  // the query constant is a placeholder for search input from local storage.
   function fetchGifs() {
     const query = 'dogs'; //!
     if (query) {
@@ -40,14 +43,15 @@ $(document).ready(function() {
         console.log(data);
       });
     }
-  }  document.getElementById('clicky').addEventListener('click', fetchGifs);
-
+  } 
+  
 
   function displayGifs(gifs) {
     const gifContainer = document.getElementById('gif-container');
     gifContainer.innerHTML = '';
 
     const topGifs = gifs.slice(0,10);
+    console.log(topGifs);
     const randomIndex = Math.floor(Math.random() * topGifs.length);
     const randomGif = topGifs[randomIndex];
 
@@ -56,5 +60,5 @@ $(document).ready(function() {
     img.classList.add('gif-item');
     gifContainer.appendChild(img);
   }
-
+  
 })
