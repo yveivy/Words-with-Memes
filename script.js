@@ -41,7 +41,7 @@ $(document).ready(function() {
       });
     }
   }  document.getElementById('clicky').addEventListener('click', fetchGifs);
-  
+
 
   function displayGifs(gifs) {
     const gifContainer = document.getElementById('gif-container');
@@ -56,6 +56,11 @@ $(document).ready(function() {
     img.classList.add('gif-item');
     gifContainer.appendChild(img);
   }
+<<<<<<< HEAD
   
 })
 >>>>>>> b27a129109ba4365ce6ecb382a25d17468c365e1
+=======
+
+})
+>>>>>>> 60d41575b2c65399c167b5c4a49830a6c9e433ed
