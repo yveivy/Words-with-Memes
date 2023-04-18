@@ -1,23 +1,28 @@
-// $(document).ready(function() {
-
-const searchInput = document.getElementById('input');
-const searchBtn = document.getElementById('search');
-
-function saveToLocalStorage(event){
-  event.preventDefault();
+document.addEventListener('DOMContentLoaded', function () {
+var searchQuery = localStorage.getItem('searchQuery');
 
 
-var inputValue = searchInput.value.trim();
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
 
-if (inputValue) {
-  localStorage.setItem('searchQuery', inputValue);
-  window.location.href = 'results.html';
-}
+    const DictionaryApiKey = '42f40c1e-656e-47a8-9597-6b3c3c5fdbe0';
+    const query = "voluminous"
+    const url = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${query}?key=${DictionaryApiKey}`;
+    
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data); // Do something with the data
+      })
+      .catch(error => {
+        console.error(error);
+      });
 
-searchForm.addEventListener('submit', saveToLocalStorage);
-searchBtn.addEventListener('click', saveToLocalStorage);
 
-}
+
+});
+
+
 
 
 
@@ -38,7 +43,7 @@ const giphyApiKey = 'DQQk3Czth43tzR6goSHYIQXrKreMrWf2';
         console.log(data);
       });
     }
-  }  document.getElementById('clicky').addEventListener('click', fetchGifs); // This button wont exist in the end
+  } 
   
 
   function displayGifs(gifs) {
@@ -56,4 +61,4 @@ const giphyApiKey = 'DQQk3Czth43tzR6goSHYIQXrKreMrWf2';
     gifContainer.appendChild(img);
   }
   
-// })
+})
