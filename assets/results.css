@@ -3,6 +3,14 @@ body {
     background-color: #f2f4f5;
 }
 
+.gif-item{
+    width: 500px;
+    height: 500px;
+    border: #2d3e50;
+    border-color: #2d3e50;
+}
+
+
 .gif-container{
 
 
@@ -16,7 +24,6 @@ body {
         font-weight: bolder;
         cursor: pointer;
         text-align: center;
-        color: rgb(189, 122, 21);
 }
 
 
@@ -45,33 +52,38 @@ content: "😂 ";
     font-weight: 300;
 }
 
-.header h2 {
+#sub-title{
+    border: #2d3e50;
+    border-width: 35px;
+    display: flex;
+    justify-content: center;
     font-weight: 300;
-    color: #ccc;
-    padding: 0;
-    margin-top: 0;
-}
+    color: #1b1a1a;
+    /* padding: 0;
+    margin-top: 0; */
+} 
 
 .content-subhead {
     margin: 50px 0 20px 0;
     font-weight: 300;
-    color: #888;
+    color: #4e4848;
 }
 
 footer{
-    height: 100px;
+    height: 50px;
         position: relative;
-        border: 3px solid rgb(15, 15, 15);
-}
+    
+ }
 
 
 .go-back{
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
-  width: 50%;
+  align-items: center; */
+  width: 40%;
   border: #000000;
-  background-color: #888;
+  background-color: #534f4f;
+  color: #dfd7d7;
   padding: 15px 25px;
   font-size: small;
   font-weight: bolder;
@@ -79,55 +91,13 @@ footer{
   text-align: center;
 margin: 0;
 position: absolute;
-top: 50%;
--ms-transform: translateY(-50%);
-transform: translateY(-50%);
+
 }
 
 /* -- Responsive Styles (Media Queries) ------------------------------------- */
 
-/*
-Hides the menu at `48em`, but modify this based on your app's needs.
-*/
-@media (min-width: 48em) {
+@media (min-width: 760px) {
 
-    .header,
-    .content {
-        padding-left: 2em;
-        padding-right: 2em;
-    }
 
-    #layout {
-        padding-left: 150px;
-        /* left col width "#menu" */
-        left: 0;
-    }
 
-    #menu {
-        left: 150px;
-    }
-
-    .menu-link {
-        position: fixed;
-        left: 150px;
-        display: none;
-    }
-
-    #layout.active .menu-link {
-        left: 150px;
-    }
-}
-
-@media (max-width: 48em) {
-
-    /* Only apply this when the window is small. Otherwise, the following
-    case results in extra padding on the left:
-        * Make the window small.
-        * Tap the menu to trigger the active state.
-        * Make the window large again.
-    */
-    #layout.active {
-        position: relative;
-        left: 150px;
-    }
 }
