@@ -59,15 +59,16 @@ content: "😂 ";
 }
 
 footer{
-    height: 200px;
+    height: 100px;
         position: relative;
-        border: 3px solid green;
+        border: 3px solid rgb(15, 15, 15);
 }
 
 
 .go-back{
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 50%;
   border: #000000;
   background-color: #888;
