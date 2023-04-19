@@ -1,12 +1,9 @@
 var query = localStorage.getItem('searchQuery');
-<<<<<<< HEAD
 var word = localStorage.getItem('searchWord');
-=======
+const DictionaryApiKey = '42f40c1e-656e-47a8-9597-6b3c3c5fdbe0';
 var filteredGifs;
->>>>>>> 0dca6bd0d379b883aa4076d09d1483ecb4428d75
 
 function fetchDefinition(word) {
-  const DictionaryApiKey = '42f40c1e-656e-47a8-9597-6b3c3c5fdbe0';
   const outputDiv = document.querySelector('.output');
 
   if (word && outputDiv) {
@@ -30,8 +27,6 @@ function fetchDefinition(word) {
   }
 };
 
-<<<<<<< HEAD
-=======
   if (query) {
     fetch(`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${query}?key=${DictionaryApiKey}`)
       .then(response => response.json())
@@ -43,8 +38,6 @@ function fetchDefinition(word) {
       });
 
   }
-}
->>>>>>> 0dca6bd0d379b883aa4076d09d1483ecb4428d75
 
 // This API call uses the variable 'query' defined from local storage
 function fetchGifs(query) {
@@ -112,5 +105,4 @@ nextGifBtn.addEventListener('click', function (gifs) {
       });
   });
 });
-
 
