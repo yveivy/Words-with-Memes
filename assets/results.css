@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: linear-gradient(to right bottom, #526c92, #3f7193, #2b7590, #1c7889, #1b7b7f);
+    background-image: linear-gradient(to right bottom, #2563d6, #8b5cc2, #b65ba9, #cc6392, #d37481);
 }
 
 .gif-item {
@@ -16,8 +16,7 @@ justify-content: center; */
 }
 
 .go-back {
-    background-color: #af964c;
-    /* Green */
+    background-color: #e3b736;
     border: none;
     color: white;
     padding: 12px 24px;
@@ -26,16 +25,50 @@ justify-content: center; */
     display: inline-block;
     font-size: 16px;
     border-radius: 4px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
+box-shadow: 5px 2px 2px black;    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.go-back:hover {
-    background-color: #3e8e41;
-    /* Darker green */
+#next-gif-button{
+    background-color: #e3b736;
+        border: none;
+        color: white;
+        padding: 12px 24px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 4px;
+box-shadow: 5px 2px 2px black;        cursor: pointer;
+        transition: background-color 0.3s ease;
 }
 
+#copy-link-button{
+color: wheat;
+background-color: #e3b736;
+border-radius: 5px;
+padding: 5px;
+box-shadow: 3px 1px black;
+cursor: pointer;
+}
+
+.go-back:hover {
+    background-color: #47c24b;
+}
+
+#copy-link-button:hover {
+    background-color: #8156a7;
+}
+
+#next-gif-button:hover{
+    background-color: rgb(55, 220, 170);
+}
+
+.output{
+font-size: 25px;
+font-weight: 10px;
+color: whitesmoke;
+}
 
 .gif-container {
 
@@ -82,7 +115,7 @@ h3 {
 }
 
 .sidebar {
-    background: rgb(61, 79, 93);
+    background:rgb(3 90 157);
     color: #fff;
 }
 

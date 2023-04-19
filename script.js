@@ -106,4 +106,3 @@ nextGifBtn.addEventListener('click', function (gifs) {
   });
 });
 
-
