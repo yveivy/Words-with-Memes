@@ -10,11 +10,25 @@
  */
 body {
     line-height: 1.7em;
-    color: #7f8c8d;
-    font-size: 13px;
+background-image: linear-gradient(to right bottom, #d37481, #cc6392, #b65ba9, #8b5cc2, #2563d6);    font-size: 13px;
 }
 
-
+#pure-menu-link{
+    color: blanchedalmond;
+    background-color: #0b0802;
+    
+        border: none;
+        color: white;
+        padding: 12px 24px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 4px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+}
 
 .pure-img-responsive {
     max-width: 100%;
@@ -46,7 +60,7 @@ body {
  * -- PURE BUTTON STYLES --
  * I want my pure-button elements to look a little different
  */
-.pure-input  {
+.pure-input {
     /* position: relative; */
     color: #111;
     padding: 15px 25px;
@@ -54,7 +68,7 @@ body {
     font-size: medium;
     border-radius: 25px;
     /* line-height: 2em; */
-    
+
 }
 
 a.pure-button-primary {
@@ -85,6 +99,7 @@ a.pure-button-primary {
     border-bottom: none;
     /* I need a higher z-index here because of the scroll-over effect. */
     z-index: 4;
+    background-color: #0a5aaf;
 }
 
 .home-menu .pure-menu-heading {
@@ -226,7 +241,7 @@ a.pure-button-primary {
         width: 50%;
         height: 50%;
     }
-    
+
 
     .splash-head {
         font-size: 250%;
