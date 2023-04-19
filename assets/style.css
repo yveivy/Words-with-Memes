@@ -11,6 +11,13 @@
 body {
     line-height: 1.7em;
     background-image: linear-gradient(to right bottom, #d37481, #cc6392, #b65ba9, #8b5cc2, #2563d6);
+    background: -webkit-gradient(to right bottom, #d37481, #cc6392, #b65ba9, #8b5cc2, #2563d6);
+    /* Chrome, Safari4+ */
+    background: -webkit-linear-gradient(to right bottom, #d37481, #cc6392, #b65ba9, #8b5cc2, #2563d6);
+    /* Chrome10+, Safari5.1+ */
+    background: -moz-linear-gradient(to right bottom, #d37481, #cc6392, #b65ba9, #8b5cc2, #2563d6);
+    height: 100vh;
+
 }
 
 #pure-menu-link {
