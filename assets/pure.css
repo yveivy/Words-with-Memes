@@ -46,7 +46,7 @@ body {
  * -- PURE BUTTON STYLES --
  * I want my pure-button elements to look a little different
  */
-.pure-input  {
+.pure-input {
     /* position: relative; */
     color: #111;
     padding: 15px 25px;
@@ -54,7 +54,7 @@ body {
     font-size: medium;
     border-radius: 25px;
     /* line-height: 2em; */
-    
+
 }
 
 a.pure-button-primary {
@@ -226,7 +226,7 @@ a.pure-button-primary {
         width: 50%;
         height: 50%;
     }
-    
+
 
     .splash-head {
         font-size: 250%;
