@@ -24,7 +24,7 @@ const popularWords = [
   'family', 'beauty', 'travel', 'adventure', 'health', 'fun', 'inspiration', 'dream', 'wisdom', 'laughter',
   'compassion', 'creativity', 'peace', 'hope', 'knowledge', 'trust', 'faith', 'achievement', 'community',
   'kindness', 'strength', 'courage', 'innovation', 'imagination', 'happiness', 'equality', 'perseverance',
-  'ambition', 'gratitude', 'harmony', 'mindfulness', 'exploration', 'passion', 'respect', 'balance',
+  'ambition', 'gratitude', 'harmony', 'mindfulness', 'exploration', 'respect', 'balance',
   'curiosity', 'empowerment', 'optimism', 'serenity',
   'anger', 'sadness', 'failure', 'chaos', 'ignorance', 'conflict', 'fear', 'noise', 'hate', 'jealousy',
   'pain', 'suffering', 'loss', 'grief', 'despair', 'deception', 'loneliness', 'injustice', 'misery',
@@ -33,7 +33,11 @@ const popularWords = [
   'oppression', 'alienation', 'paranoia', 'distrust', 'frustration', 'gloom', 'melancholy', 'pessimism',
   'ennui', 'disillusionment', 'uncertainty', 'discontent', 'desolation', 'ephemeral', 'oblivion', 'entropic',
   'anomie', 'antipathy', 'capricious', 'enigmatic', 'ephemeral', 'labyrinthine', 'mercurial', 'paradoxical',
-  'surreal', 'transient', 'vicissitudes', 'wistful'
+  'surreal', 'transient', 'wistful', 'banana', 'awkward', 'penguin', 'celebration', 'silly', 'confetti', 'puppy', 'kitten', 'dancing', 'goofy',
+  'magic', 'comedy', 'juggling', 'trampoline', 'fluffy', 'snack', 'bounce', 'sleepy', 'sneeze', 'chicken',
+  'hug', 'unicorn', 'squirrel', 'disco', 'wiggle', 'sunglasses', 'hamster', 'cartwheel', 'rollercoaster', 'mustache',
+  'giggles', 'ticklish', 'yoga', 'karaoke', 'marshmallow', 'bubblegum', 'costume', 'skateboard', 'dinosaur', 'llama',
+  'tickle', 'surfing', 'toucan', 'jellyfish', 'pirate', 'moonwalk', 'cowboy', 'robot', 'popcorn', 'donut'
 ];
 
 const randomizeButton = document.getElementById('randomize-button');
