@@ -22,18 +22,16 @@ function fetchResults() {
 
 
 function fetchDefinition(query, showWord) {
-  const outputDiv = document.querySelector('.output');  
-  
-  
-  
+  const outputDiv = document.querySelector('.output');
+
   if (query && outputDiv) {
     fetch(`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${query}?key=${DictionaryApiKey}`)
-    .then(response => response.json())
-    .then(data => {
+      .then(response => response.json())
+      .then(data => {
         console.log(data);
 
-        const firstDefinition = data[0].shortdef[0];
-        const defDisplay = data[0].hwi.hw
+        const shortdefs = data[0].shortdef.slice(0, 3); // Get first three definitions
+        const defDisplay = data[0].hwi.hw;
         console.log(defDisplay);
         wordBox.innerHTML = defDisplay;
 
@@ -42,23 +40,23 @@ function fetchDefinition(query, showWord) {
         } else {
           wordBox.innerHTML = '';
         }
-        
-        
-        
-        const definitionNode = document.createTextNode(firstDefinition);
-        
-        outputDiv.innerHTML = '';
-        
-        outputDiv.appendChild(definitionNode);
-       
 
-        console.log(firstDefinition);
+        outputDiv.innerHTML = '';
+
+        shortdefs.forEach((definition, index) => { // Iterate through the definitions
+          const definitionNode = document.createTextNode(`${index + 1}. ${definition}`);
+          const lineBreak = document.createElement('br');
+
+          outputDiv.appendChild(definitionNode);
+          outputDiv.appendChild(lineBreak); // Add a line break after each definition
+        });
+
+        console.log(shortdefs);
       })
       .catch(error => {
         console.error('Error fetching definition:', error);
       });
   }
-  
 };
 
 
@@ -75,7 +73,7 @@ function fetchGifs(query) {
         const gifs = data.data;
 
         filteredGifs = gifs.filter(function (gif) {
-          return gif.rating !== 'r';
+          return gif.rating !== 'r' && gif.rating !== 'pg-13';
         });
         console.log(data);
         displayGifs(filteredGifs);
@@ -90,11 +88,11 @@ function displayGifs(gifs) {
   
   // filter gifs with content rating of R
   const filteredGifs = gifs.filter(function (gif) {
-    return gif.rating !== 'r';
+    return gif.rating !== 'r' && gif.rating !== 'pg-13';
   });
   
   // The giphy API sends back a 50 object array.  The farther down the list the more 'off-topic' the gifs get so we limited the results to the first 10.
-  const topGifs = filteredGifs.slice(0, 10);
+  const topGifs = filteredGifs.slice(0, 20);
   console.log(topGifs);
   const randomIndex = Math.floor(Math.random() * topGifs.length);
   const randomGif = topGifs[randomIndex];
@@ -148,7 +146,7 @@ const popularWords = [
   'family', 'beauty', 'travel', 'adventure', 'health', 'fun', 'inspiration', 'dream', 'wisdom', 'laughter',
   'compassion', 'creativity', 'peace', 'hope', 'knowledge', 'trust', 'faith', 'achievement', 'community',
   'kindness', 'strength', 'courage', 'innovation', 'imagination', 'happiness', 'equality', 'perseverance',
-  'ambition', 'gratitude', 'harmony', 'mindfulness', 'exploration', 'passion', 'respect', 'balance',
+  'ambition', 'gratitude', 'harmony', 'mindfulness', 'exploration', 'respect', 'balance',
   'curiosity', 'empowerment', 'optimism', 'serenity',
   'anger', 'sadness', 'failure', 'chaos', 'ignorance', 'conflict', 'fear', 'noise', 'hate', 'jealousy',
   'pain', 'suffering', 'loss', 'grief', 'despair', 'deception', 'loneliness', 'injustice', 'misery',
@@ -157,7 +155,11 @@ const popularWords = [
   'oppression', 'alienation', 'paranoia', 'distrust', 'frustration', 'gloom', 'melancholy', 'pessimism',
   'ennui', 'disillusionment', 'uncertainty', 'discontent', 'desolation', 'ephemeral', 'oblivion', 'entropic',
   'anomie', 'antipathy', 'capricious', 'enigmatic', 'ephemeral', 'labyrinthine', 'mercurial', 'paradoxical',
-  'surreal', 'transient', 'vicissitudes', 'wistful'
+  'surreal', 'transient', 'wistful', 'banana', 'awkward', 'penguin', 'celebration', 'silly', 'confetti', 'puppy', 'kitten', 'dancing', 'goofy',
+  'magic', 'comedy', 'juggling', 'trampoline', 'fluffy', 'snack', 'bounce', 'sleepy', 'sneeze', 'chicken',
+  'hug', 'unicorn', 'squirrel', 'disco', 'wiggle', 'sunglasses', 'hamster', 'cartwheel', 'rollercoaster', 'mustache',
+  'giggles', 'ticklish', 'yoga', 'karaoke', 'marshmallow', 'bubblegum', 'costume', 'skateboard', 'dinosaur', 'llama',
+  'tickle', 'surfing', 'toucan', 'jellyfish', 'pirate', 'moonwalk', 'cowboy', 'robot', 'popcorn', 'donut'
 ];
 
 // This function is called above using the query parameter.  Query was set in an earlier function and is what is reading the local storage data.  
