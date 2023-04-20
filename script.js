@@ -117,6 +117,7 @@ function displayGifs(gifs) {
 const nextGifBtn = document.getElementById('next-gif-button');
 nextGifBtn.addEventListener('click', function (gifs) {
   displayGifs(filteredGifs);
+});
   
   const copyLinkButton = document.getElementById('copy-link-button');
   const copyStatus = document.getElementById('copy-status');
@@ -126,7 +127,7 @@ nextGifBtn.addEventListener('click', function (gifs) {
     const copyableLink = document.getElementById('copyable-link');
     navigator.clipboard.writeText(copyableLink.value)
       .then(() => {
-        copyStatus.textContent = 'Link copied to clipboard!';
+        copyStatus.textContent = 'Link Copied!';
         setTimeout(() => {
           copyStatus.textContent = '';
         }, 3000); // Remove the message after 3 seconds
@@ -138,7 +139,6 @@ nextGifBtn.addEventListener('click', function (gifs) {
   
   
   
-});
 
 //!!
 // not sure if we needed this, but copy pasted it anyway. It works with this here
