@@ -1,6 +1,7 @@
 var query = localStorage.getItem('searchQuery');
 const DictionaryApiKey = '42f40c1e-656e-47a8-9597-6b3c3c5fdbe0';
 var filteredGifs;
+const wordBox = document.getElementById('definition-display');
 
 // This function is for tidiness.  It helps make sure that functions are called in the correct order and way.
 // Additionally it checks local storage to see if needs to also call the quiz function based on a boolean flag we gave on the buttons back on the home page.
@@ -9,17 +10,21 @@ function fetchResults() {
   
   if (query) {
     fetchGifs(query);
-    fetchDefinition(query);
+    const showWord = localStorage.getItem('isRandomSearch') !== 'true';
+    fetchDefinition(query, showWord);
     
     if (localStorage.getItem('isRandomSearch') === 'true') {
       displayQuiz(query);
+      
     }
   }
 }
 
 
-function fetchDefinition(query) {
-  const outputDiv = document.querySelector('.output');
+function fetchDefinition(query, showWord) {
+  const outputDiv = document.querySelector('.output');  
+  
+  
   
   if (query && outputDiv) {
     fetch(`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${query}?key=${DictionaryApiKey}`)
@@ -28,12 +33,24 @@ function fetchDefinition(query) {
         console.log(data);
 
         const firstDefinition = data[0].shortdef[0];
+        const defDisplay = data[0].hwi.hw
+        console.log(defDisplay);
+        wordBox.innerHTML = defDisplay;
 
+        if (showWord) {
+          wordBox.innerHTML = defDisplay;
+        } else {
+          wordBox.innerHTML = '';
+        }
+        
+        
+        
         const definitionNode = document.createTextNode(firstDefinition);
-
+        
         outputDiv.innerHTML = '';
-
+        
         outputDiv.appendChild(definitionNode);
+       
 
         console.log(firstDefinition);
       })
@@ -70,28 +87,28 @@ function fetchGifs(query) {
 function displayGifs(gifs) {
   const gifContainer = document.querySelector('.gif-container');
   gifContainer.innerHTML = '';
-
+  
   // filter gifs with content rating of R
   const filteredGifs = gifs.filter(function (gif) {
     return gif.rating !== 'r';
   });
-
+  
   // The giphy API sends back a 50 object array.  The farther down the list the more 'off-topic' the gifs get so we limited the results to the first 10.
   const topGifs = filteredGifs.slice(0, 10);
   console.log(topGifs);
   const randomIndex = Math.floor(Math.random() * topGifs.length);
   const randomGif = topGifs[randomIndex];
-
+  
   const img = new Image();
   img.classList.add('gif-item');
-
+  
   //Waits until the page is loaded before creating a new img (class stays the same for styling, but removed default img that we had placeholding on the HTML).
   //!This makes the page appear to jump and I think we can fix it with styling.  With the placeholder the size of the div stays the same but the first image we see is the placeholder
   img.addEventListener('load', function () {
     gifContainer.innerHTML = '';
     gifContainer.appendChild(img);
   });
-
+  
   img.src = randomGif.images.fixed_width.url;
   document.getElementById('copyable-link').value = randomGif.images.fixed_width.url;
 }
@@ -100,10 +117,10 @@ function displayGifs(gifs) {
 const nextGifBtn = document.getElementById('next-gif-button');
 nextGifBtn.addEventListener('click', function (gifs) {
   displayGifs(filteredGifs);
-
+  
   const copyLinkButton = document.getElementById('copy-link-button');
   const copyStatus = document.getElementById('copy-status');
-
+  
   // uses the link uses data from the API to put a link on the screen that when the user clicks the button it copies it to clipboard
   copyLinkButton.addEventListener('click', function () {
     const copyableLink = document.getElementById('copyable-link');
@@ -118,13 +135,14 @@ nextGifBtn.addEventListener('click', function (gifs) {
         console.error('Failed to copy link: ', err);
       });
   });
-
   
-
+  
+  
 });
 
 //!!
 // not sure if we needed this, but copy pasted it anyway. It works with this here
+// EDIT:  We do need this so that the play again button will pick a new word.
 const popularWords = [
   'love', 'happy', 'success', 'nature', 'education', 'technology', 'freedom', 'music', 'art', 'friendship',
   'family', 'beauty', 'travel', 'adventure', 'health', 'fun', 'inspiration', 'dream', 'wisdom', 'laughter',
@@ -172,6 +190,7 @@ function displayQuiz(randomWord) {
   quizContainer.classList.add('quiz-container');
   quizQuestion.innerHTML = 'Which word best describes the definition and GIF?';
   quizContainer.appendChild(quizQuestion);
+  wordBox.innerHTML = '';
 
 
   

@@ -242,12 +242,20 @@ h3 {
 
 
 /* ---------------------- */
+#definition-display {
+    font-size: 40px;
+    color: white;
+    font-weight: 650px;
+    font-style: italic;
+    margin: 0 0 40px 0;
+}
+
 
 .quiz-container {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: row;
     align-items: flex-start;
-    justify-content: space-around;
+    justify-content: space-around; */
     margin: 20px 0;
 }
 
