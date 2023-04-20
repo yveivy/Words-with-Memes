@@ -22,18 +22,17 @@ body {
 
 #pure-menu-link {
     color: blanchedalmond;
-    background-color: #0b0802;
-
+    background-color: #e3b736;
+    font-family: 'Mystery Quest', cursive;
     border: none;
-    color: white;
+    color: #110ee3;
     padding: 12px 24px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 25px;
     border-radius: 4px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
+    box-shadow: 5px 2px 2px black;    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
@@ -111,8 +110,9 @@ a.pure-button-primary {
 
 .home-menu .pure-menu-heading {
     color: white;
+font-family: 'Mystery Quest', cursive;
     font-weight: 400;
-    font-size: 120%;
+    font-size: 35px;
 }
 
 .home-menu .pure-menu-selected a {
