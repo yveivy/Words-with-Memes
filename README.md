@@ -2,10 +2,13 @@
 
 Our team designed and executed a fun, yet purposeful app that provides multiple options for entertainment and learning. The primary activity allows the user to input a word and get the definition of that word, along with a related GIF. It also presents an effective vocabulary builder if the user chooses the Randomizer button. Instead of specifying a word to be defined, the Randomizer button displays a GIF and definition without indicating which word is being defined. The user is given 4 words to choose from and prompted to select which word they think fits the GIF and provided definition best! Additionally, the app allows users to copy the link of the displayed GIF and easily share it on social media.
 
+![alt text]("https://github.com/yveivy/Words-with-Memes/img/Words-with-Memes-screencapture.jpg")
+
 ## Features:
 
    - Input a word and get its definition and a related GIF
-   - Use the Randomizer button to guess the word of the provided    definition and GIF
+   - Use the Randomizer button to guess the word of the provided   
+   definition and GIF
    - Copy and share GIF links on social media    
 
 ## Team Members:
