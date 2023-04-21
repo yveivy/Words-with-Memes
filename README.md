@@ -41,11 +41,11 @@ The Merriam-Webster API:
 
 The challenge with the API call to the dictionary by Merriam Webster is the amount of information that was returned. In the future we may decide to include some additional information like synonyms or antonyms but for this release we wanted to keep it simple and only supply the most widely used definitions. We accomplished this by structuring the response to extract and display only the first few definitions of the word.
 
- ## Most Challenging Aspect:
+## Most Challenging Aspect:
 
 A special feature of this project is the option to select the Randomizer button and guess the word of the provided definition and GIF. This was a promising idea that we resolved to explore with no idea we would be able to accomplish it. It involves carefully crafted code that features a flag on an event listener. It sets the parameter as a boolean value that specifies whether the event listener should execute during the capture phase or the bubbling phase. In Javascript the events propagate from, or "bubble" up the DOM tree from the target element to its parent elements. The default is execution during the bubbling phase, on the target element first and then its parent elements. However, by setting the flag to 'true', you can execute the event listener in the capture phase instead. In this way events propagate from the top of the DOM tree down to the target element, bypassing the target element which in this case would result in the vocabulary quiz instead of the specified word definition.
 
-Future Improvements:
+## Future Improvements:
 
 In the future, we would like to match the GIFs more closely with the actual definition, rather than the word itself. As the app works currently, the API calls are made simultaneously. We encountered a few words where the definition and the GIF image do not closely match. We believe if the dictionary API was called first and then the GIF was called using the string of words in the definition, it would solve this problem and provide increased value to our application as a learning tool.
 
@@ -56,6 +56,13 @@ In the future, we would like to match the GIFs more closely with the actual defi
     Font Joy
     Colorspace
 
+## Contact:
+   - Milton Robles https://github.com/mrobles-dev
+   - Brad Hall https://github.com/Bradfh
+   - Mahogany Coleman https://github.com/mahog874
+   - Yevette Hunt https://github.com/yveivy
+
+
  *For more information on the benefits of humor in education, see the following references:
  https://www.nature.com/articles/nn0301_237#citeas
  https://www.nature.com/articles/nrn1406#citeas
@@ -64,7 +71,7 @@ In the future, we would like to match the GIFs more closely with the actual defi
  https://doi.org/10.1080/03634520903367238
 
 
-## 
+
 
 
 
