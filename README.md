@@ -60,6 +60,7 @@ In the future, we would like to match the GIFs more closely with the actual defi
     Font Joy
     Colorspace
     ChatGPT
+    https://www.golinuxcloud.com/javascript-copy-to-clipboard/#:~:text=The%20Clipboard%20API%20works%20by%20providing%20two%20methods%2C,the%20clipboard%20and%20returns%20it%20as%20a%20string.
 
 ## Contact:
    - Milton Robles https://github.com/mrobles-dev
