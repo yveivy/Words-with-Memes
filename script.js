@@ -167,6 +167,8 @@ const popularWords = [
 // This picks 4 words at random from the popularWords array.  If the choices variable (which is our displayed word) is not included
 // in the 4 picked words it is pushed in.  Then the choices are sorted.  I don't fully understand what - 0.5 does but it helps it be more random.
 
+
+//ChatGPT helped get this function to work and it took us all a fair bit of time to figure out why it works the way it does, but we all got to a point where we learned that the math.random() - .5 is simply a 'trick' we can use to sort items by assigning a positive or negative significance to each 'choices' thereby telling the computer to sort them in a certain way.  If 'choices' is given a positive, or greater than 0, value, the function will swap its place with the preceding choice thereby creating a sense of randomness.
 function generateQuizChoices(randomWord) {
   const choices = [randomWord];
   while (choices.length < 4) {

@@ -55,6 +55,7 @@ In the future, we would like to match the GIFs more closely with the actual defi
     The Giphy API
     Font Joy
     Colorspace
+    ChatGPT
 
 ## Contact:
    - Milton Robles https://github.com/mrobles-dev
